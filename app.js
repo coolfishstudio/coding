@@ -10,7 +10,7 @@ var router = require('./lib/router');
 // global middlewares
 app.use(views('views', {
   root: __dirname + '/views',
-  default: 'jade'
+  default: 'ejs'
 }));
 app.use(require('koa-bodyparser')());
 app.use(json());
@@ -26,10 +26,7 @@ app.use(function *(next){
 app.use(require('koa-static')(__dirname + '/public'));
 
 // routes definition
-koa.use('/', index.routes(), index.allowedMethods());
-
-// mount root routes  
-app.use(koa.routes());
+app.use(router.routes());
 
 app.on('error', function(err, ctx){
   logger.error('server error', err, ctx);

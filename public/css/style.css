@@ -1,0 +1,237 @@
+@charset "utf-8";
+*{margin: 0; padding: 0;box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;}
+html,body{height:100%;font-size: 14px;font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;}
+body,ul,pre{padding:0;margin:0;}
+ul{list-style:none;}
+a{text-decoration:none;color:#000;}
+p,dd{margin:0;}
+input,button{outline:none;}
+.fl{float:left;}
+.fr{float:right;}
+.clearfix:before,.clearfix:after{content:''; display:table;}.clearfix:after{clear:both;}.clearfix{*zoom:1;}
+.none{display:none;}
+.block{display:block;}
+/* 文字阴影 */
+.text-shadow {text-shadow: 0px 0px 1px #ccc;}
+/* Color */
+@-webkit-keyframes hue {
+    from {
+        -webkit-filter: hue-rotate(0deg);
+    }
+
+    to {
+        -webkit-filter: hue-rotate(-360deg);
+    }
+}
+.hue{-webkit-animation: hue 60s infinite linear;}
+/***** footer *****/
+.footer {position:relative;z-index:998;padding:60px;background-color:#323A45;text-align:center;color:#fff;}
+/***** index *****/
+.indexContent{height: 100%;position: relative;touch-action: none;overflow: hidden;}
+.section{display: table;width:100%;height: 100%;position: relative;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+.fullPageCell{display: table-cell;vertical-align: middle;width: 100%;height:100%;text-align: center;}
+.fullPageCell h2, .fullPageCell h1 {font-weight: 400;font-variant: normal; margin-top: 10px;}
+.fullPageCell h1{font-size: 48px;color: #62AC40;}
+.fullPageCell h2{font-size: 24px;}
+.fullPageCell p{margin-top: 10px;color: #7b8993;}
+.button-panel {margin-top: 20px;margin-bottom: 60px;}
+.button {
+    display: inline-block;
+    width: 220px;
+    height: 48px;
+    font: 16px/48px '';
+    border-radius: 6px;
+    margin: 0 10px;
+    border: 0;
+    color: #fff;
+    transition: .2s;
+    cursor: pointer;
+    background: #62AC40;
+}
+.button:hover {
+    background: #509431;
+}
+/***** Editor *****/
+#editor{background:#252525;color:#fff;position:fixed;top:0;right:0;bottom:0;left:0}
+#editor .topbar{margin-top:4px;background-color:#252525;border-bottom:1px solid #000;border-top:1px solid #000;height:31px;position:relative;box-shadow:0 1px 0 0 #353535 inset}
+#editor .topbar:before{position:absolute;left:0;right:0;top:-5px;height:4px;background-color:#62AC40;content:"";display:block}
+#editor .menu-nav,#editor .setting-nav,#editor .tool-nav{display:inline-block;vertical-align:top}
+#editor .menu-nav>li,#editor .setting-nav>li,#editor .tool-nav>li{display:inline-block}
+#editor .menu-nav .menuBtn{cursor: default;height:29px;line-height:29px;padding:0 12px;box-sizing:border-box;overflow:visible;position:relative;display:inline-block;font-size:12px;color:#cecece;text-shadow:#292a2b 0 1px 0}
+#editor .menu-nav .menuBtn:hover{background-color:#333;box-shadow:1px -1px 0 0 #000,-1px 0 0 0 #000,0 1px 0 0 rgba(255,255,255,.15) inset;color:#d4d4d4}
+#editor .tool-nav .menuIcon{height:23px;line-height:21px;padding:0 12px;margin:3px 0;box-sizing:border-box;overflow:visible;position:relative;display:inline-block;font-size:12px;color:#cecece;text-shadow:#292a2b 0 1px 0;border:1px solid transparent;border-radius:3px}
+#editor .tool-nav .menuIcon:hover{border:1px solid #000;-webkit-box-shadow:inset 1px 1px rgba(255,255,255,.1),inset -1px -1px rgba(255,255,255,.1);-moz-box-shadow:inset 1px 1px rgba(255,255,255,.1),inset -1px -1px rgba(255,255,255,.1);box-shadow:inset 1px 1px rgba(255,255,255,.1),inset -1px -1px rgba(255,255,255,.1);text-shadow:none}
+#editor .setting-nav{box-shadow:1px 0 1px rgba(255,255,255,.06) inset;border-left:1px solid #000;padding:0;float:right}
+#editor .menu-nav .menuIcon.logo{height:29px;line-height:29px;padding:0 12px;box-sizing:border-box;overflow:visible;position:relative;display:inline-block;font-size:12px;color:#cecece;text-shadow:#292a2b 0 1px 0;position:relative;background-color:#62AC40;text-shadow:none;color:#fff}
+#editor .menu-nav .menuIcon.logo:before{position:absolute;left:0;right:0;top:-1px;height:1px;background-color:#62AC40;content:"";display:block}
+.editorBox{position:absolute;top:35px;right:0;bottom:0;left:0}
+#editor .menu-nav .menu {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    margin: 1px 0 0 -1px;
+    padding: 3px 0 3px 0;
+    border-bottom: 1px solid #00040a;
+    border-right: 1px solid #00040a;
+    border-left: 1px solid #00040a;
+    -webkit-box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.65);
+    -moz-box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.65);
+    box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.65);
+    background-color: #494949;
+    text-shadow: 0px 1px 0px #2c2c2c;
+    border-radius: 0;
+}
+#editor .menu-nav .menu .menu-item{
+    padding: 3px 16px 5px 23px;
+    white-space: nowrap;
+    cursor: default;
+    line-height: 14px;
+    color: #f1f1f1;
+    font-size: 11px;
+}
+#editor .menu-nav .menu .menu-item:hover,
+.bottomPanel .editorStatus .label .menu .menu-item:hover{
+    color: #62AC40;
+    background-color: #262626;
+}
+
+#editor .menu-nav .menu .menu-item > span {
+    right: 15px;
+    margin-top: 0px;
+    z-index: 10;
+    text-align: right;
+    padding-left: 15px;
+    float: right;
+}
+#editor .menu-nav .menu .menu-item > u {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 3px;
+    margin-top: -1px;
+}
+
+#editor .menu-nav .menu .menu_divider {
+    overflow: visible;
+    padding: 0;
+    font-size: 1px;
+    margin: 2px 3px;
+    border-top: 1px solid #353535;
+    border-bottom: 1px solid #565656;
+    height: 0;
+}
+
+#editor .menu-nav .menu-board.active .menuBtn{background-color:#494949;box-shadow:1px -1px 0 0 #000,-1px 0 0 0 #000,0 1px 0 0 rgba(255,255,255,.15) inset;color:#d4d4d4}
+#editor .menu-nav .menu-board.active .menu{display: block;}
+
+.editorBox .contentPanel {
+    position: absolute;
+    left: 36px;
+    top: 0px;
+    bottom: 20px;
+    right: 36px;
+}
+
+.editorBox .contentPanel  #editorPanel{
+    width: 100%;
+    height: 100%;
+}
+
+.leftPanel .leftSection, .rightPanel .rightSection{
+    z-index: -1;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: #303130;
+    width: 250px;
+    display: none;
+}
+.leftPanel .leftSection{
+    left: -215px;
+    border-right: 1px solid #000000;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset;
+}
+.rightPanel .rightSection{
+    left: 35px;
+    border-left: 1px solid #000000;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+.leftPanel .leftSection .leftSectionContent{
+    display: none;
+    margin-top: 10px;
+    margin-left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.bottomPanel{
+    height: 20px;
+    position:absolute;
+    min-height:20px;
+    display:block;
+    bottom:0;
+    z-index:20;
+    right: 0;
+    left: 0;
+}
+.bottomPanel .editorStatus{
+    background: #252525;
+    height:100%;
+    border-top:1px solid rgba(255,255,255,.06);
+    color: rgba(0, 0, 0, 0.4);
+    white-space: nowrap;
+    text-align: right;
+    padding-right: 36px;
+}
+
+.bottomPanel .editorStatus .label{
+    padding: 0 0 0 1px;
+    overflow: visible;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: normal;
+    font-size: 11px;
+    vertical-align: middle;
+    color: rgba(255, 255, 255, 0.5);
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.57);
+    cursor: pointer;
+    margin: 1px 10px 4px 3px;
+    min-height: 17px;
+    line-height: 17px;
+    display: inline-block;
+    position: relative;
+}
+.bottomPanel .editorStatus .label:hover{
+    color: #62AC40;
+}
+.bottomPanel .editorStatus .label .menu{
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    right: -10px;
+    z-index: 1000;
+    margin: 1px 0 0 -1px;
+    padding: 3px 0 3px 0;
+    border-top: 1px solid #00040a;
+    border-right: 1px solid #00040a;
+    border-left: 1px solid #00040a;
+    -webkit-box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.65);
+    -moz-box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.65);
+    box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.65);
+    background-color: #494949;
+    text-shadow: 0px 1px 0px #2c2c2c;
+    border-radius: 0;
+}
+.bottomPanel .editorStatus .label .menu .menu-item{
+    padding: 3px 16px 5px 23px;
+    white-space: nowrap;
+    cursor: default;
+    line-height: 14px;
+    color: #f1f1f1;
+    font-size: 11px;
+}
