@@ -32,12 +32,12 @@ input,button{outline:none;}
 .footer {position:relative;z-index:998;padding:60px;background-color:#323A45;text-align:center;color:#fff;}
 /***** index *****/
 .indexContent{height: 100%;position: relative;touch-action: none;overflow: hidden;background-color:#252525;}
-.section{display: table;width:100%;height: 100%;position: relative;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+.section{display: table;width:100%;height: 100%;position: relative;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;pointer-events: none;position: absolute;}
 .fullPageCell{display: table-cell;vertical-align: middle;width: 100%;height:100%;text-align: center;}
-.fullPageCell h2, .fullPageCell h1 {font-weight: 400;font-variant: normal; margin-top: 10px;}
-.fullPageCell h1{font-size: 48px;color: #62AC40;}
+.fullPageCell h2, .fullPageCell h1 {font-weight: 400;font-variant: normal; margin-top: 10px;color: #fff;}
+.fullPageCell h1{font-size: 48px;}
 .fullPageCell h2{font-size: 24px;}
-.fullPageCell p{margin-top: 10px;color: #7b8993;}
+.fullPageCell p{margin-top: 10px;color: #fff;}
 .button-panel {margin-top: 20px;margin-bottom: 60px;}
 .button {
     display: inline-block;
@@ -48,12 +48,13 @@ input,button{outline:none;}
     margin: 0 10px;
     border: 0;
     color: #fff;
-    transition: .2s;
+    transition: background-color .3s;
     cursor: pointer;
-    background: #62AC40;
+    pointer-events: auto;
+    background: rgba(0,0,0,.4);
 }
 .button:hover {
-    background: #509431;
+    background: rgba(0,0,0,.7);
 }
 /***** Editor *****/
 #editor{background:#252525;color:#fff;position:fixed;top:0;right:0;bottom:0;left:0}
