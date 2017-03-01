@@ -131,41 +131,13 @@ input,button{outline:none;}
 
 .editorBox .contentPanel {
     position: absolute;
-    left: 36px;
-    top: 0px;
+    left: 0;
+    top: 0;
     bottom: 20px;
-    right: 36px;
+    right: 0;
 }
 
 .editorBox .contentPanel  #editorPanel{
-    width: 100%;
-    height: 100%;
-}
-
-.leftPanel .leftSection, .rightPanel .rightSection{
-    z-index: -1;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    background: #303130;
-    width: 250px;
-    display: none;
-}
-.leftPanel .leftSection{
-    left: -215px;
-    border-right: 1px solid #000000;
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset;
-}
-.rightPanel .rightSection{
-    left: 35px;
-    border-left: 1px solid #000000;
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
-}
-.leftPanel .leftSection .leftSectionContent{
-    display: none;
-    margin-top: 10px;
-    margin-left: 0px;
     width: 100%;
     height: 100%;
 }
