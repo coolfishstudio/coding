@@ -8,13 +8,19 @@ $(function () {
         theme: 'ambiance',
         indentUnit: 4,
         lineNumbers: true,
+        lineWrapping: true,
         matchBrackets: true,
-        styleActiveLine: true
+        styleActiveLine: true,
+        autoCloseTags: true,
+        foldGutter: true,
+        gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+        matchTags: { bothTags: true }
     });
     // 设置编辑器宽高
     editor.setSize(w, h);
     // 设置编辑器自动换行
     editor.setOption('lineWrapping', true);
+
     //监听事件
     $(window).keydown(function (event) {
         updateCursorPanel();
