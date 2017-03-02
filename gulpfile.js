@@ -2,8 +2,10 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var cssmin = require('gulp-minify-css');
+var rev = require('gulp-rev');
+var clean = require('gulp-clean');
 
-gulp.task('taskJs', function () {
+gulp.task('taskCodeJs', function () {
     gulp.src([
         './public/lib/codemirror/codemirror.js',
         './public/lib/codemirror/addon/fold/foldcode.js',
@@ -25,10 +27,12 @@ gulp.task('taskJs', function () {
     ])
     .pipe(concat('codemirror.min.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('./public/dist'));
+    .pipe(rev())
+    .pipe(gulp.dest('./public/dist'))
+    .pipe(rev.manifest());
 });
 
-gulp.task('taskCss', function () {
+gulp.task('taskCodeCss', function () {
     gulp.src([
         './public/lib/codemirror/codemirror.css',
         './public/lib/codemirror/theme/ambiance.css',
@@ -36,7 +40,36 @@ gulp.task('taskCss', function () {
     ])
     .pipe(concat('codemirror.min.css'))
     .pipe(cssmin())
-    .pipe(gulp.dest('./public/dist'));
+    .pipe(rev())
+    .pipe(gulp.dest('./public/dist'))
+    .pipe(rev.manifest());
 });
 
-gulp.task('default', ['taskJs', 'taskCss']);
+gulp.task('clean', function () {
+    gulp.src(['./public/dist', './public/rev'], {read: false})
+        .pipe(clean());
+});
+
+gulp.task('taskEditorCss', function () {
+    gulp.src([
+        './public/css/style.css'
+    ])
+    .pipe(concat('main.min.css'))
+    .pipe(cssmin())
+    .pipe(rev())
+    .pipe(gulp.dest('./public/dist'))
+    .pipe(rev.manifest());
+});
+
+gulp.task('taskEditorJs', function () {
+    gulp.src([
+        './public/js/editor.js',
+    ])
+    .pipe(concat('editor.min.js'))
+    .pipe(uglify())
+    .pipe(rev())
+    .pipe(gulp.dest('./public/dist'))
+    .pipe(rev.manifest());
+});
+
+gulp.task('build', ['clean', 'taskCodeCss', 'taskCodeJs', 'taskEditorCss', 'taskEditorJs']);

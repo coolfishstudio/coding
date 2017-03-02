@@ -1,10 +1,12 @@
 CACHE MANIFEST
-#v0.0.1
+#v0.0.2
 
 CACHE:
-/dist/codemirror.min.js
-dist/codemirror.min.css
+dist/codemirror-b5adcf1d8e.min.js
+dist/codemirror-cb635b6ea4.min.css
 lib/jquery/jquery.min.js
+dist/editor-db1c1bc102.min.js
+dist/main-ea8ba355bf.min.css
 
 NETWORK:
 *
