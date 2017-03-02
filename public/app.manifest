@@ -2,7 +2,7 @@ CACHE MANIFEST
 #v0.0.1
 
 CACHE:
-dist/codemirror.min.js
+/dist/codemirror.min.js
 dist/codemirror.min.css
 lib/jquery/jquery.min.js
 
