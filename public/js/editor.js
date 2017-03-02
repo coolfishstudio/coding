@@ -16,8 +16,9 @@ $(function () {
         gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
         matchTags: { bothTags: true }
     });
+    window.editor = editor;
     // 设置编辑器宽高
-    editor.setSize(w, h);
+    editor.setSize('auto', h);
     // 设置编辑器自动换行
     editor.setOption('lineWrapping', true);
 
@@ -35,6 +36,60 @@ $(function () {
         cursor.c = editor.getCursor().ch || 0;
         $('#cursorPanel').html(cursor.l + ':' + cursor.c);
     }
+    // 处理开启实时预览时候的容器样式
+    function previewLayout () {
+        var w = document.body.clientWidth;
+        $('.contentPanel').css({'width': w / 2 + 'px'});
+        $('#preview').css({
+            'left': w / 2 + 'px',
+            'width': w / 2 + 'px'
+        }).show();
+        resetIframe();
+    }
+    // 处理关闭实时预览时候的容器样式
+    function previewLayoutClose () {
+        var w = document.body.clientWidth;
+        $('.contentPanel').css({'width': w + 'px'});
+        $('#preview').hide();
+    }
+    // 处理预览界面
+    function resetIframe () {
+        var codeText = editor.getValue();
+        var content = window.frames['result'].document;
+        content.open();
+        content.write(codeText);
+        content.close();
+    }
+
+    // 实时预览
+    var timer = null;
+    editor.on('change', function () {
+        if (window.frames['result']) {
+            clearTimeout(timer);
+            timer = setTimeout(resetIframe(), 300);
+        }
+    });
+
+    // 菜单切换预览界面
+    function togglePreview () {
+        $('#previewBtn').on('click', function () {
+            if ($(this).hasClass('active')) {
+                $(this).removeClass('active');
+                previewLayoutClose();
+                $(this).html('开启实时预览');
+            } else {
+                $(this).addClass('active');
+                previewLayout();
+                $(this).html('关闭实时预览');
+            }
+        });
+    }
+    // 初始化
+    function init () {
+        previewLayout();
+        togglePreview();
+    }
     updateCursorPanel();
+    init();
 });
 

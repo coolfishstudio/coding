@@ -57,13 +57,14 @@ input,button{outline:none;}
     background: rgba(0,0,0,.7);
 }
 /***** Editor *****/
-#editor{background:#252525;color:#fff;position:fixed;top:0;right:0;bottom:0;left:0}
+#editor{background:#fff;color:#fff;position:fixed;top:0;right:0;bottom:0;left:0}
 #editor .topbar{margin-top:4px;background-color:#252525;border-bottom:1px solid #000;border-top:1px solid #000;height:31px;position:relative;box-shadow:0 1px 0 0 #353535 inset}
 #editor .topbar:before{position:absolute;left:0;right:0;top:-5px;height:4px;background-color:#62AC40;content:"";display:block}
 #editor .menu-nav,#editor .setting-nav,#editor .tool-nav{display:inline-block;vertical-align:top}
 #editor .menu-nav>li,#editor .setting-nav>li,#editor .tool-nav>li{display:inline-block}
-#editor .menu-nav .menuBtn{cursor: default;height:29px;line-height:29px;padding:0 12px;box-sizing:border-box;overflow:visible;position:relative;display:inline-block;font-size:12px;color:#cecece;text-shadow:#292a2b 0 1px 0}
+#editor .menu-nav .menuBtn{cursor: pointer;height:29px;line-height:29px;padding:0 12px;box-sizing:border-box;overflow:visible;position:relative;display:inline-block;font-size:12px;color:#cecece;text-shadow:#292a2b 0 1px 0}
 #editor .menu-nav .menuBtn:hover{background-color:#333;box-shadow:1px -1px 0 0 #000,-1px 0 0 0 #000,0 1px 0 0 rgba(255,255,255,.15) inset;color:#d4d4d4}
+#editor .menu-nav .menuBtn.active{background-color: #111;box-shadow: 1px -1px 0 0 #000, -1px 0 0 0 #000, 0 1px 0 0 rgba(255,255,255,.15) inset;color: #fff;}
 #editor .tool-nav .menuIcon{height:23px;line-height:21px;padding:0 12px;margin:3px 0;box-sizing:border-box;overflow:visible;position:relative;display:inline-block;font-size:12px;color:#cecece;text-shadow:#292a2b 0 1px 0;border:1px solid transparent;border-radius:3px}
 #editor .tool-nav .menuIcon:hover{border:1px solid #000;-webkit-box-shadow:inset 1px 1px rgba(255,255,255,.1),inset -1px -1px rgba(255,255,255,.1);-moz-box-shadow:inset 1px 1px rgba(255,255,255,.1),inset -1px -1px rgba(255,255,255,.1);box-shadow:inset 1px 1px rgba(255,255,255,.1),inset -1px -1px rgba(255,255,255,.1);text-shadow:none}
 #editor .setting-nav{box-shadow:1px 0 1px rgba(255,255,255,.06) inset;border-left:1px solid #000;padding:0;float:right}
@@ -207,4 +208,17 @@ input,button{outline:none;}
     line-height: 14px;
     color: #f1f1f1;
     font-size: 11px;
+}
+#preview {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 10;
+}
+#preview iframe {
+    border: none;
+    height: 100%;
+    width: 100%;
 }

@@ -29,30 +29,18 @@
                         猿Coding
                     </div>
                 </li>
-                <li class="menu-board">
-                    <div class="menuBtn">菜单</div>
-                    <ul class="menu">
-                        <li><div class="menu-item"><span>⌘ S</span><u></u>Save</div></li>
-                        <li><div class="menu_divider"></div></li>
-                        <li><div class="menu-item"><span></span><u></u>Download Project</div></li>
-                    </ul>
+                <!-- <li class="menu-board">
+                    <div class="menuBtn">文件</div>
                 </li>
                 <li class="menu-board">
                     <div class="menuBtn">保存</div>
-                    <ul class="menu">
-                        <li><div class="menu-item"><span>⌘ S</span><u></u>Save</div></li>
-                        <li><div class="menu_divider"></div></li>
-                        <li><div class="menu-item"><span></span><u></u>Download Project</div></li>
-                    </ul>
+                </li> -->
+                <li class="menu-board">
+                    <div class="menuBtn active" id="previewBtn">关闭实时预览</div>
                 </li>
                 <!-- <li class="menu-board">
                     <div class="menuBtn">预览</div>
-                    <ul class="menu">
-                        <li><div class="menu-item"><span>⌘ S</span><u></u>Save</div></li>
-                        <li><div class="menu_divider"></div></li>
-                        <li><div class="menu-item"><span></span><u></u>Download Project</div></li>
-                    </ul>
-                </li> -->
+                </li>
                 <li>
                     <div class="menuBtn">帮助</div>
                 </li>
@@ -63,12 +51,15 @@
                     <a href="/login" class="menuBtn">
                         登录
                     </a>
-                </li>
+                </li> -->
             </ul>
         </div>
-        <div class="editorBox">
+        <div class="editorBox" id="editorBox">
             <div class="contentPanel">
                 <textarea id="editorPanel" name="editorPanel" class="none"><% include demo %></textarea>
+            </div>
+            <div id="preview">
+                <iframe name="result"></iframe>
             </div>
             <div class="bottomPanel">
                 <div class='editorStatus'>
