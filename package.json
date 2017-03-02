@@ -22,5 +22,11 @@
     "mongodb": "^2.2.24",
     "mongoskin": "^2.1.0",
     "request": "^2.79.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-uglify": "^2.0.1"
   }
 }
