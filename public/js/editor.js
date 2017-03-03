@@ -6,7 +6,7 @@ $(function () {
     var editor = CodeMirror.fromTextArea(editorPanel, {
         mode: 'text/html',
         theme: 'ambiance',
-        indentUnit: 4,
+        indentUnit: 2,
         lineNumbers: true,
         lineWrapping: true,
         matchBrackets: true,
@@ -18,7 +18,7 @@ $(function () {
     });
     window.editor = editor;
     // 设置编辑器宽高
-    editor.setSize('auto', h);
+    editor.setSize('auto', '100%');
     // 设置编辑器自动换行
     editor.setOption('lineWrapping', true);
 
@@ -64,10 +64,14 @@ $(function () {
     // 实时预览
     var timer = null;
     editor.on('change', function () {
-        if (window.frames['result']) {
-            clearTimeout(timer);
+        clearTimeout(timer);
+        if (window.frames['result'] && $('#preview').css('display') !== 'none') {
             timer = setTimeout(resetIframe(), 300);
         }
+    });
+    // 代码提示
+    editor.on('keypress', function () {
+        editor.showHint();
     });
 
     // 菜单切换预览界面

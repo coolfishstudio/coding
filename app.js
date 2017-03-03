@@ -38,7 +38,7 @@ app.use(require('koa-static')(__dirname + '/public'));
 app.use(router.routes());
 
 app.on('error', function(err, ctx){
-    logger.error('server error', err, ctx);
+    console.error('server error', err, ctx);
 });
 
 module.exports = app;

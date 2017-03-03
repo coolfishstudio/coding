@@ -20,6 +20,9 @@ gulp.task('taskCodeJs', function () {
         './public/lib/codemirror/addon/edit/closetag.js',
         './public/lib/codemirror/addon/fold/xml-fold.js',
         './public/lib/codemirror/addon/edit/matchtags.js',
+        './public/lib/codemirror/addon/hint/show-hint.js',
+        './public/lib/codemirror/addon/hint/css-hint.js',
+        './public/lib/codemirror/addon/hint/javascript-hint.js',
         './public/lib/codemirror/mode/xml.js',
         './public/lib/codemirror/mode/javascript.js',
         './public/lib/codemirror/mode/css.js',
@@ -36,6 +39,7 @@ gulp.task('taskCodeCss', function () {
     gulp.src([
         './public/lib/codemirror/codemirror.css',
         './public/lib/codemirror/theme/ambiance.css',
+        './public/lib/codemirror/addon/hint/show-hint.css',
         './public/lib/codemirror/addon/fold/foldgutter.css'
     ])
     .pipe(concat('codemirror.min.css'))
